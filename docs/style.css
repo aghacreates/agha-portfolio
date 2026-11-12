@@ -48,8 +48,7 @@ h1, h2 { font-weight: 700; letter-spacing: -.085em; line-height: .95; }
 
 .hero { position: relative; display: grid; min-height: clamp(480px, 47vw, 638px); place-items: center; padding-block: 45px 78px; }
 .hero-copy { position: relative; z-index: 1; text-align: center; }
-.hero-role { display: inline-flex; align-items: center; gap: 8px; padding: 6px 10px; border: 1px solid var(--line); border-radius: 5px; background: var(--paper); }
-.hero-role span { width: 8px; height: 8px; border: 1px solid #6c7e0e; background: var(--lime); border-radius: 50%; }
+.hero-role { color: #4d4d43; font-size: clamp(.9rem, 1.25vw, 1.05rem); font-weight: 600; line-height: 1.4; }
 .hero h1 { font-size: clamp(65px, 8.6vw, 126px); margin-top: 22px; }
 .hero h1 span { color: #738400; }
 .hero-text { max-width: 38ch; margin: 22px auto 24px; font-size: clamp(1rem, 1.6vw, 1.18rem); line-height: 1.55; color: #4d4d43; }
