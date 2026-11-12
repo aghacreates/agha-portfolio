@@ -1,15 +1,9 @@
 'use strict';
 
-const projectId = project => new URL(project.behance).pathname.match(/^\/gallery\/(\d+)(?:\/|$)/)?.[1];
 const gallery = document.querySelector('.project-grid');
 const tiles = document.querySelector('.hero-tiles');
 const filters = document.querySelector('.filters');
 const count = document.querySelector('.project-count');
-const dialog = document.querySelector('.project-dialog');
-const closeButton = dialog.querySelector('.dialog-close');
-const embedButton = dialog.querySelector('.load-embed');
-const embed = dialog.querySelector('.embed');
-const projectsById = new Map(portfolioProjects.map(project => [projectId(project), project]));
 
 function element(tag, className, text) {
   const node = document.createElement(tag);
@@ -48,16 +42,7 @@ function artwork(project, className, eager = false) {
 
 function projectLink(project, className) {
   const link = element('a', className);
-  link.href = project.behance;
-  if (!dialog.showModal || !projectId(project)) return link;
-
-  link.setAttribute('aria-haspopup', 'dialog');
-  link.addEventListener('click', event => {
-    if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
-    event.preventDefault();
-    history.pushState({ openedProject: true }, '', `#project-${projectId(project)}`);
-    showProjectFromHash();
-  });
+  link.href = projectHref(project);
   return link;
 }
 
@@ -65,7 +50,7 @@ const cards = portfolioProjects.map(project => {
   const card = projectLink(project, 'project-card');
   const caption = element('div', 'card-caption');
   const names = element('div');
-  names.append(element('h3', null, project.title), element('p', null, project.category));
+  names.append(element('h3', null, project.title), element('p', null, project.subtitle || project.category));
   const arrow = element('span', 'card-arrow', '↗');
   arrow.setAttribute('aria-hidden', 'true');
   caption.append(names, arrow);
@@ -102,58 +87,10 @@ function applyFilter(category) {
 }
 applyFilter('All work');
 
-let activeProject;
-
-function showProjectFromHash() {
-  if (!dialog.showModal) return;
+function redirectProjectHash() {
   const id = location.hash.match(/^#project-(\d+)$/)?.[1];
-  const project = projectsById.get(id);
-  if (!project) {
-    if (dialog.open) dialog.close();
-    return;
-  }
-  if (dialog.open && project === activeProject) return;
-
-  activeProject = project;
-  dialog.querySelector('#project-title').textContent = project.title;
-  dialog.querySelector('#project-category').textContent = project.category;
-  const description = dialog.querySelector('.project-description');
-  description.textContent = project.description || '';
-  description.hidden = !project.description;
-  dialog.querySelector('.dialog-source').href = project.behance;
-  dialog.querySelector('.dialog-cover').replaceChildren(artwork(project, 'detail-artwork', true));
-  embed.replaceChildren();
-  embed.hidden = true;
-  embedButton.hidden = false;
-
-  if (!dialog.open) dialog.showModal();
-  dialog.scrollTop = 0;
-  closeButton.focus({ preventScroll: true });
+  const project = id && portfolioProjects.find(entry => projectId(entry) === id);
+  if (project) location.replace(projectHref(project));
 }
-
-embedButton.addEventListener('click', () => {
-  if (!activeProject || embed.firstChild) return;
-  const frame = element('iframe');
-  frame.title = `${activeProject.title} on Behance`;
-  frame.src = `https://www.behance.net/embed/project/${projectId(activeProject)}?ilo0=1`;
-  frame.referrerPolicy = 'strict-origin-when-cross-origin';
-  embed.append(frame);
-  embed.hidden = false;
-  frame.focus();
-});
-
-closeButton.addEventListener('click', () => dialog.close());
-dialog.addEventListener('click', event => {
-  if (event.target === dialog) dialog.close();
-});
-dialog.addEventListener('close', () => {
-  embed.replaceChildren();
-  dialog.querySelector('.dialog-cover').replaceChildren();
-  activeProject = undefined;
-  if (!/^#project-\d+$/.test(location.hash)) return;
-  if (history.state?.openedProject) history.back();
-  else history.replaceState(null, '', '#work');
-});
-window.addEventListener('popstate', showProjectFromHash);
-window.addEventListener('hashchange', showProjectFromHash);
-showProjectFromHash();
+window.addEventListener('hashchange', redirectProjectHash);
+redirectProjectHash();
