@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Selected work by Agha Noman, a brand designer and creative lead working across identity, packaging, digital design and campaigns.">
+  <meta name="theme-color" content="#f4f4ef">
+  <title>Agha Noman — Brand Designer</title>
+  <link rel="icon" href="./assets/agha-noman.webp" type="image/webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="./style.css">
+  <script src="./projects.js" defer></script>
+  <script src="./site.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="intro-shell" id="top">
+    <header class="wrap header">
+      <a class="wordmark" href="#top"><span class="mark" aria-hidden="true">a<span>.</span></span> Agha Noman</a>
+      <nav class="nav" aria-label="Main navigation"><a href="#work">Work</a><a href="#about">About</a></nav>
+      <a class="button button-black header-contact" href="#contact">Get in touch <span aria-hidden="true">↗</span></a>
+    </header>
+  </div>
+  <main id="main" tabindex="-1">
+    <div class="intro-shell">
+      <section class="wrap hero" aria-labelledby="hero-heading">
+        <div class="hero-copy">
+          <p class="eyebrow hero-role"><span aria-hidden="true"></span> Design Lead &amp; Brand Designer</p>
+          <h1 id="hero-heading">Brands with<br>character<span>.</span></h1>
+          <p class="hero-text">I’m Agha Noman. I build visual identities and take them into packaging, digital products and campaigns.</p>
+          <a class="button button-black" href="#work">Explore my work <span aria-hidden="true">↓</span></a>
+        </div>
+        <div class="hero-tiles" aria-label="Featured projects"></div>
+      </section>
+    </div>
+
+  <section class="work" id="work" aria-labelledby="work-heading">
+    <div class="wrap">
+      <div class="work-heading">
+        <h2 id="work-heading">Selected work<span>.</span></h2>
+        <a class="text-link behance-link" href="https://www.behance.net/aghanoman25/projects" target="_blank" rel="noopener">View Behance profile <span aria-hidden="true">↗</span></a>
+      </div>
+      <div class="work-controls" hidden>
+        <div class="filters" role="group" aria-label="Filter projects"></div>
+        <p class="project-count" role="status"></p>
+      </div>
+      <div class="project-grid"></div>
+      <noscript><p>Explore the complete project gallery on <a href="https://www.behance.net/aghanoman25/projects">Behance</a>.</p></noscript>
+    </div>
+  </section>
+
+  <section class="about" id="about" aria-labelledby="about-heading">
+    <div class="wrap about-layout">
+      <div class="portrait"><img src="./assets/agha-noman.webp" alt="Portrait of Agha Noman" width="900" height="900" loading="lazy"></div>
+      <div class="about-copy">
+        <p class="eyebrow">About</p>
+        <h2 id="about-heading">I’m Agha Noman<span>.</span></h2>
+        <p>I lead design at Xyric.AI, where I shape brand direction and digital experiences. My work spans visual identity, packaging, art direction and campaign design.</p>
+        <a class="text-link" href="https://www.behance.net/aghanoman25/resume" target="_blank" rel="noopener">Experience and résumé <span aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+  </section>
+  </main>
+
+  <footer class="contact" id="contact">
+    <div class="wrap">
+      <div class="contact-inner">
+        <div><p class="eyebrow">Contact</p><h2>Let’s build<br>something<span>.</span></h2></div>
+        <div class="contact-links">
+          <a class="button button-lime" href="mailto:aghanomaninstagram@gmail.com">Email me <span aria-hidden="true">↗</span></a>
+          <div class="socials"><a href="https://www.behance.net/aghanoman25" target="_blank" rel="noopener">Behance ↗</a><a href="https://www.instagram.com/agha_noman/" target="_blank" rel="noopener">Instagram ↗</a><a href="https://www.linkedin.com/in/agha-noman-385965202/" target="_blank" rel="noopener">LinkedIn ↗</a></div>
+        </div>
+      </div>
+      <div class="footer-bar"><span>© Agha Noman</span><a href="#top">Back to top <span aria-hidden="true">↑</span></a></div>
+    </div>
+  </footer>
+
+  <dialog class="project-dialog" aria-labelledby="project-title">
+    <div class="dialog-body">
+      <div class="dialog-head"><p class="eyebrow" id="project-category"></p><button class="dialog-close" type="button" aria-label="Close project" autofocus>×</button></div>
+      <h2 id="project-title"></h2>
+      <p class="project-description"></p>
+      <div class="dialog-cover"></div>
+      <div class="dialog-actions"><a class="button button-lime dialog-source" href="https://www.behance.net/aghanoman25/projects" target="_blank" rel="noopener">Full project on Behance <span aria-hidden="true">↗</span></a><button class="button button-outline load-embed" type="button">Load Behance preview <span aria-hidden="true">↓</span></button></div>
+      <div class="embed" hidden></div>
+    </div>
+  </dialog>
+</body>
+</html>
