@@ -96,7 +96,7 @@ h1, h2 { font-weight: 700; letter-spacing: -.085em; line-height: .95; }
 .about { padding-block: clamp(56px, 8.5vw, 126px); }
 .about-layout { display: grid; grid-template-columns: minmax(180px, .75fr) minmax(0, 1.3fr); align-items: center; gap: clamp(30px, 7.2vw, 105px); }
 .portrait { border-radius: 22px; overflow: hidden; background: #d0d0c6; }
-.portrait img { width: 100%; height: auto; aspect-ratio: 1.12; object-fit: cover; }
+.portrait img { width: 100%; height: auto; aspect-ratio: 1.12; object-fit: cover; object-position: center top; }
 .about h2 { margin: 12px 0 18px; }
 .about h2 span { color: #738400; }
 .about-copy > p:not(.eyebrow) { max-width: 47ch; color: #4d4d43; font-size: clamp(1rem, 1.6vw, 1.2rem); line-height: 1.6; margin-bottom: 12px; }
