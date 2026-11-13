@@ -66,7 +66,8 @@ for (const project of portfolioProjects.filter(project => project.featured)) {
   tiles.append(tile);
 }
 
-const categories = [...new Set(portfolioProjects.map(project => project.category))].sort();
+const cardCategories = portfolioProjects.map(project => [project.category, ...(project.additionalCategories || [])]);
+const categories = [...new Set(cardCategories.flat())].sort();
 const filterButtons = ['All work', ...categories].map(category => {
   const button = element('button', null, category);
   button.type = 'button';
@@ -80,7 +81,7 @@ function applyFilter(category) {
   filterButtons.forEach(button => button.setAttribute('aria-pressed', String(button.textContent === category)));
   let shown = 0;
   cards.forEach((card, index) => {
-    card.hidden = category !== 'All work' && portfolioProjects[index].category !== category;
+    card.hidden = category !== 'All work' && !cardCategories[index].includes(category);
     if (!card.hidden) shown++;
   });
   count.textContent = `${shown} ${shown === 1 ? 'project' : 'projects'}`;

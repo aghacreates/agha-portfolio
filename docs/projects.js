@@ -3,6 +3,7 @@ const portfolioProjects = [
   {
     "title": "Balencia",
     "category": "Digital",
+    "additionalCategories": ["Branding"],
     "description": "A wellbeing app brought to life through a visual identity, a cast of 3D characters, a website and an outdoor campaign.",
     "behance": "https://www.behance.net/gallery/258174323/Balencia-Brand-Identity-App-Website",
     "cover": "https://mir-s3-cdn-cf.behance.net/projects/max_808_webp/c13ba3258174323.Y3JvcCwxMDgwLDg0NCwwLDM3NA.png",
@@ -33,6 +34,7 @@ const portfolioProjects = [
   {
     "title": "Breads & Cakes",
     "category": "Packaging",
+    "additionalCategories": ["Branding"],
     "description": "Hand-lettering and illustrated bakers tie together the shopfront, pastry boxes, cups and menus.",
     "behance": "https://www.behance.net/gallery/235663723/Bakery-Branding",
     "cover": "https://mir-s3-cdn-cf.behance.net/projects/max_808_webp/d81c13235663723.Y3JvcCw4MzIsNjUwLDAsMTE1.jpg",
@@ -42,6 +44,7 @@ const portfolioProjects = [
   {
     "title": "Millers",
     "category": "Packaging",
+    "additionalCategories": ["Branding"],
     "description": "A nostalgic character and a pared-back graphic system for cans, bottles, multipacks and outdoor advertising.",
     "behance": "https://www.behance.net/gallery/199575317/Retro-Minimalist-Beer-Branding",
     "cover": "https://mir-s3-cdn-cf.behance.net/projects/max_808_webp/6f083c199575317.Y3JvcCwzNjczLDI4NzIsMTU0LDEwMDkx.jpg",
@@ -51,6 +54,7 @@ const portfolioProjects = [
   {
     "title": "Khan Kulfi",
     "category": "Packaging",
+    "additionalCategories": ["Branding"],
     "description": "An ornate identity with hand-drawn roses and a colour system for pistachio, almond and sugar-free flavours.",
     "behance": "https://www.behance.net/gallery/221017541/Khan-Kulfi-Brand-Identity-Packaging",
     "cover": "https://mir-s3-cdn-cf.behance.net/projects/max_808_webp/b562f4221017541.Y3JvcCwxNTQ3LDEyMTAsMjg3LDQ4Mjc.jpg",
@@ -61,6 +65,7 @@ const portfolioProjects = [
   {
     "title": "Mocha Mania",
     "category": "Branding",
+    "additionalCategories": ["Packaging"],
     "description": "Retro lettering and a coffee-cup mascot for a coffee shop’s signage, interiors, menus and packaging.",
     "behance": "https://www.behance.net/gallery/201693991/Cofee-Shop-Branding",
     "cover": "https://mir-s3-cdn-cf.behance.net/projects/max_808_webp/0aa34e201693991.Y3JvcCwyNjUwLDIwNzMsOTU3LDcwMQ.jpg",
@@ -70,6 +75,7 @@ const portfolioProjects = [
   {
     "title": "Potato Bliss",
     "category": "Packaging",
+    "additionalCategories": ["Branding"],
     "description": "A mascot-led identity for a fries brand, designed to work on the food truck and across takeaway packaging.",
     "behance": "https://www.behance.net/gallery/199936249/Potato-Bliss-Branding",
     "cover": "https://mir-s3-cdn-cf.behance.net/projects/max_808_webp/b8fa59199936249.Y3JvcCwyODYyLDIyMzksNTgxLDM5Ng.jpg",
@@ -129,6 +135,7 @@ const portfolioProjects = [
   {
     "title": "Nurpur & DairyPure",
     "category": "Packaging",
+    "additionalCategories": ["Branding"],
     "subtitle": "Milk packaging redesign",
     "behance": "https://www.behance.net/gallery/201770797/Repackaging-Nurpur-and-DairyPure",
     "cover": "https://mir-s3-cdn-cf.behance.net/projects/404/1627f5201770797.Y3JvcCw0Nzk0LDM3NTAsMTA2LDA.jpg"
